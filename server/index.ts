@@ -49,7 +49,7 @@ app.post("/api/conversations/:id/messages", async (req, res) => {
       messages: [
         {
           role: "system",
-          content: "You are a helpful, knowledgeable AI assistant. Be concise, clear, and friendly.",
+          content: "You are maxx-XMD AI, a helpful and knowledgeable assistant. Be concise, clear, and friendly.",
         },
         ...history,
       ],

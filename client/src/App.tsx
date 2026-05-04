@@ -193,7 +193,7 @@ export default function App() {
             </button>
           )}
           <span className="chat-title">
-            {conversations.find((c) => c.id === activeId)?.title ?? "AI Assistant"}
+            {conversations.find((c) => c.id === activeId)?.title ?? "maxx-XMD AI"}
           </span>
         </header>
 
@@ -203,7 +203,7 @@ export default function App() {
               <div className="empty-icon">
                 <SparkleIcon />
               </div>
-              <h2>How can I help you today?</h2>
+              <h2>Welcome to maxx-XMD AI</h2>
               <p>Ask me anything — I&rsquo;m here to assist.</p>
             </div>
           )}
@@ -232,7 +232,7 @@ export default function App() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Message AI Assistant..."
+              placeholder="Message maxx-XMD AI..."
               disabled={streaming}
             />
             <button
