@@ -68,10 +68,14 @@ export default function App() {
     setStreaming(true);
 
     try {
-      const res = await fetch(`/api/conversations/${activeId}/messages`, {
+      const history = (messages[activeId] ?? [])
+        .filter((m) => m.id !== assistantId)
+        .map(({ role, content }) => ({ role, content }));
+
+      const res = await fetch(`/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: text }),
+        body: JSON.stringify({ messages: [...history, { role: "user", content: text }] }),
       });
 
       if (!res.body) throw new Error("No response body");
